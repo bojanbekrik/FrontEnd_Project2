@@ -1,0 +1,249 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, sans-serif;
+}
+
+.container {
+    display: flex;
+    /*height: 100vh;*/
+}
+
+.sidebar {
+    background: #ffffff;
+    margin: 15px;
+    width: 340px;
+}
+
+.preview {
+    background: #f9fafd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.layout-placeholder {
+    color: #464b5b;
+    font-size: 18px;
+}
+
+.accordion {
+    background: #e6ebff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.accordion-title {
+    color: #0033ff;
+    font-weight: 800;
+    font-size: 18px;
+    margin: 0;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+input {
+    box-sizing: border-box;
+}
+
+.form-control {
+    background-color: #ffffff;
+    border: 1px solid #d6dae4;
+    border-radius: 3px;
+    padding: 6px 12px;
+    height: 38px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+}
+
+input[type="radio"] {
+    margin: 0;
+    width: 15px;
+    height: 15px;
+}
+
+.radio-select {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+.containerMine {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+/*3 columns*/
+.card {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 1px solid #E0E0E0;
+    margin: 10px;
+    display: none;
+}
+
+.card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(3),
+.card:nth-child(4) {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.profImage{
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    margin: 10px;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.profNameAndDate{
+    align-self: center;
+    justify-self: start;
+    text-align: start;
+    margin: 10px;
+}
+
+.instaLogo {
+    width: 50px;
+    height: 50px;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.postPic {
+    width: 400px;
+    height: 325px;
+    grid-column: span 3;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.description {
+    width: 400px;
+    grid-column: span 3;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.likes {
+    grid-column: span 3;
+    text-align: start;
+    margin: 10px;
+    border-top: 2px solid #E0E0E0;
+    padding-top: 20px;
+}
+
+.likeButton{
+    background:url(icons/heart.svg) no-repeat;
+    cursor:pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+}
+
+#load-more{
+    grid-column: span 3;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #0081FF;
+    border-radius: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+#load-more:hover {
+    background-color: blue;
+}
+
+@media (max-width: 992px) {
+    .containerMine {
+        grid-template-columns: auto auto;
+    }
+
+    .postPic {
+        grid-column: span 2;
+        width: 300px;
+        height: 243px;
+    }
+
+    .description {
+        grid-column: span 2;
+    }
+
+    .likes {
+        grid-column: span 2;
+    }
+
+    #load-more{
+        grid-column: span 2;
+    }
+}
+
+/*(<768px)*/
+
+@media (max-width: 768px) {
+    .containerMine {
+        grid-template-columns: auto;
+    }
+
+    .postPic {
+        grid-column: span 1;
+        width: 300px;
+        height: 243px;
+    }
+
+    .description {
+        grid-column: span 1;
+    }
+
+    .likes {
+        grid-column: span 1;
+    }
+
+    #load-more{
+        grid-column: span 1;
+    }
+}
+
+
+
+

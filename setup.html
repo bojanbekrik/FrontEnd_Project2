@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Frontend challenge - Bojan Bekrikj</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://embedsocial.com/cdn/fonts/roboto/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="js.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="sidebar">
+        <div class="accordion">
+            <h4 class="accordion-title">
+                Settings panel
+            </h4>
+        </div>
+        <div class="settings">
+            <label class="label">
+                Number of columns
+            </label>
+            <select id="numberOfColumns" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="dynamic" selected>dynamic</option>
+            </select>
+            <button onclick="changeColumns()">Change the number of columns</button>
+
+            <label class="label">
+                Card background color
+            </label>
+            <input id="cardBackgroundColor" class="form-control" type="text" value="#ffffff"/>
+            <button onclick="generateBackgroundColor()">Change background color</button>
+
+            <label class="label">
+                Cards space between
+            </label>
+            <input id="cardSpaceBetween" class="form-control" type="text" value="10px" />
+            <button onclick="generateSpace()">Change the margins</button>
+
+            <label class="label">
+                Choose theme
+            </label>
+            <div class="radio-group">
+                <div class="radio-select">
+                    <input id="lightTheme" type="radio" name="theme" value="lightTheme" checked>
+                    <label for="lightTheme">Light</label>
+                </div>
+
+                <div class="radio-select">
+                    <input id="darkTheme" type="radio" name="theme" value="darkTheme">
+                    <label for="darkTheme">Dark</label>
+                </div>
+            </div>
+            <button onclick="changeTheme()">Change the theme</button>
+
+            <label class="label">
+                Filter by source
+            </label>
+            <div class="radio-group">
+                <div class="radio-select">
+                    <input id="all" type="radio" name="filterBySource" value="all" checked>
+                    <label for="all">All</label>
+                </div>
+
+                <div class="radio-select">
+                    <input id="instagram" type="radio" name="filterBySource" value="instagram">
+                    <label for="instagram">Instagram</label>
+                </div>
+
+                <div class="radio-select">
+                    <input id="facebook" type="radio" name="filterBySource" value="facebook">
+                    <label for="facebook">Facebook</label>
+                </div>
+
+                <div class="radio-select">
+                    <input id="twitter" type="radio" name="filterBySource" value="twitter">
+                    <label for="twitter">Twitter</label>
+                </div>
+
+                <button onclick="filterSource()">Filter by source</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="preview">
+        <!-- Start creating layout html here -------------------------------------------------------------------------->
+        <div class="containerMine" id="containerMine">
+            <div class="card" id="card0">
+                <div class="profImage"> </div>
+                <div class="profNameAndDate"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes" id="likes"> </div>
+            </div>
+
+            <div class="card" id="card1">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card2">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card3">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card4">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card5">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card6">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card7">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card8">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card9">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card10">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card11">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card12">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card13">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card14">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card15">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card16">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card17">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card18">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div class="card" id="card19">
+                <div class="profImage"> </div>
+                <div class="profName"> </div>
+                <div class="date"> </div>
+                <div class="instaLogo"> </div>
+                <div class="postPic"> </div>
+                <div class="description"> </div>
+                <div class="likes"> </div>
+            </div>
+
+            <div id="load-more"> <b>LOAD MORE</b> </div>
+
+        </div>
+
+        <!--			<div class="layout-placeholder">-->
+        <!--				Layout should appear here-->
+        <!--			</div>-->
+    </div>
+</div>
+
+<script>
+    let loadMoreBtn = document.querySelector('#load-more');
+    let currentItem = 4;
+
+    loadMoreBtn.onclick = () => {
+        let boxes = [...document.querySelectorAll('.card')];
+
+        for (var i = currentItem; i < currentItem + 4; i++) {
+            boxes[i].style.display = 'grid';
+        }
+        currentItem += 4;
+    }
+
+    function generateBackgroundColor() {
+        var bgColorJs = document.getElementById("cardBackgroundColor").value;
+        console.log(bgColorJs);
+
+        for (var i=0; i<20; i++) {
+            var cardid = document.getElementById("card"+i);
+            cardid.style="background-color: "+bgColorJs;
+        }
+    }
+
+    function generateSpace() {
+        var spaceBetweenJs = document.getElementById("cardSpaceBetween").value;
+        console.log("SpaceBetween: " + spaceBetweenJs);
+
+        for (var i=0; i<20; i++) {
+            var cardid = document.getElementById("card"+i);
+            cardid.style="margin: "+spaceBetweenJs;
+        }
+    }
+
+    function changeTheme () {
+        var lightThemeJs = document.getElementById("lightTheme");
+        console.log(lightThemeJs);
+        var darkThemeJs = document.getElementById("darkTheme");
+        console.log(darkThemeJs);
+
+        if (darkThemeJs.checked) {
+            for (var i=0; i<20; i++) {
+                var cardid = document.getElementById("card"+i);
+                cardid.style="background-color: black; color: white";
+            }
+        }
+        else {
+            for (var i=0; i<20; i++) {
+                var cardid = document.getElementById("card"+i);
+                cardid.style="background-color: white; color: black";
+            }
+        }
+    }
+
+    function changeColumns() {
+        var numOfColumnsJs = document.getElementById("numberOfColumns").value;
+        console.log("Number of columns selected: " + numOfColumnsJs);
+
+        var containerJs = document.getElementById("containerMine");
+
+        if (numOfColumnsJs === "2") {
+            containerJs.style = "grid-template-columns: auto auto"
+        }
+    }
+
+    function countLikes () {
+
+        var likesJs = document.getElementById("likes");
+        console.log(likesJs);
+
+    }
+</script>
+
+
+</body>
+</html>
